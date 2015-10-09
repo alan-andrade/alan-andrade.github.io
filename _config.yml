@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            Site Title
+title:            Alan Andrade
 locale:           en_US
-url:
+url: 'alan-andrade.github.io'
 
 
 # Jekyll configuration
