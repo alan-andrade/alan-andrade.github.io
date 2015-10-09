@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title:            Alan Andrade
-locale:           en_US
-url: "alan-andrade.github.io"
+title: Alan Andrade
+locale: en_US
+url: "http://alan-andrade.github.io"
 
 
 # Jekyll configuration
@@ -26,12 +26,12 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
+  name: Alan Andrade
   avatar: bio-photo.jpg
-  bio: "Describe your self."
-  email:
+  bio: "FOOOOOO"
+  email: alan.andradec@gmail.com
   disqus-shortname:
-  twitter: #username
+  twitter: _alan_andrade
   facebook: #username
   google:
     plus: #username
@@ -40,9 +40,9 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: alan-andrade
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
+  linkedin: alanandradec
   xing: #username
   instagram: #username
   lastfm: #username
@@ -52,7 +52,7 @@ owner:
   steam: #username
   dribbble: #username
   youtube: #username
-  soundcloud: #username
+  soundcloud: alanandrade123
   weibo: #username
   flickr: #username
   codepen: #username
