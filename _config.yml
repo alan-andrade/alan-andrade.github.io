@@ -15,20 +15,20 @@ sass:
   style: compressed
 gems:
   - jekyll-sitemap
+  - emoji_for_jekyll
 
 kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
-
+  use_coderay: true
 
 # Site owner
 owner:
   name: Alan Andrade
   avatar: bio-photo.jpg
-  bio: I was born in Mexico and I'm living in bay area. I love the ferry commute in the mornings and I like to make music. My favorite spot is the dock.
+  bio: I was born in Mexico and I'm currently living in they bay area. I love the ferry commute in the mornings and I like to make music. My favorite spot is the dock.
   email: alan.andradec+website@gmail.com
   disqus-shortname:
   twitter: _alan_andrade
