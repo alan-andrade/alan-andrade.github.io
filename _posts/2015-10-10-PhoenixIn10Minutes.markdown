@@ -40,9 +40,11 @@ role of Bundler or NPM, but for Elixir.
 
 # Project creation
 
+In order to create a skeleton of a phoenix application run
+
 `mix phoenix.new echoAPI --no-brunch --no-ecto --no-html`
 
-1. Create the project under the folder "echoAPI".
+1. This creates the project under the folder "echoAPI".
 2. `--no-brunch` Skips the asset manager for front end stuff such as images
 and javascripts.
 3. `--no-ecto` Skips the database and the model layer.

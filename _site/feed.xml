@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://alan-andrade.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://alan-andrade.github.io" />
-<updated>2015-10-12T10:55:52-07:00</updated>
+<updated>2015-10-12T11:59:59-07:00</updated>
 <id>http://alan-andrade.github.io/</id>
 <author>
   <name>Alan Andrade</name>
@@ -59,10 +59,12 @@ role of Bundler or NPM, but for Elixir.&lt;/p&gt;
 
 &lt;h1 id=&quot;project-creation&quot;&gt;Project creation&lt;/h1&gt;
 
+&lt;p&gt;In order to create a skeleton of a phoenix application run&lt;/p&gt;
+
 &lt;p&gt;&lt;code&gt;mix phoenix.new echoAPI --no-brunch --no-ecto --no-html&lt;/code&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Create the project under the folder “echoAPI”.&lt;/li&gt;
+  &lt;li&gt;This creates the project under the folder “echoAPI”.&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;--no-brunch&lt;/code&gt; Skips the asset manager for front end stuff such as images
 and javascripts.&lt;/li&gt;
   &lt;li&gt;&lt;code&gt;--no-ecto&lt;/code&gt; Skips the database and the model layer.&lt;/li&gt;
