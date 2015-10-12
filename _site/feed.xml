@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://alan-andrade.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://alan-andrade.github.io" />
-<updated>2015-10-12T01:27:37-07:00</updated>
+<updated>2015-10-12T01:30:36-07:00</updated>
 <id>http://alan-andrade.github.io/</id>
 <author>
   <name>Alan Andrade</name>
@@ -177,7 +177,7 @@ things.&lt;/li&gt;
   &lt;li&gt;Run you application with &lt;code&gt;mix phoenix.server&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Use curl or a browser to point to the new endpoint. &lt;code&gt;curl
 localhost:4000/api/echo\?foo=bar&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Feel proud. &lt;img class=&quot;emoji&quot; title=&quot;godmode&quot; alt=&quot;godmode&quot; src=&quot;https://github.global.ssl.fastly.net/images/icons/emoji/godmode.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Feel proud. &lt;img class=&quot;emoji&quot; title=&quot;:godmode:&quot; alt=&quot;:godmode:&quot; src=&quot;https://assets.github.com/images/icons/emoji/godmode.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
