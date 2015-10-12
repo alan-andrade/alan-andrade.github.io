@@ -4,12 +4,108 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://alan-andrade.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://alan-andrade.github.io" />
-<updated>2015-10-10T01:07:40-07:00</updated>
+<updated>2015-10-11T11:39:41-07:00</updated>
 <id>http://alan-andrade.github.io/</id>
 <author>
   <name>Alan Andrade</name>
   <uri>http://alan-andrade.github.io/</uri>
   <email>alan.andradec+website@gmail.com</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Phoenix in 10 minutes]]></title>
+  <link rel="alternate" type="text/html" href="http://alan-andrade.github.io/phoenixupandrunning/" />
+  <id>http://alan-andrade.github.io/phoenixupandrunning</id>
+  <published>2015-10-10T22:43:25-07:00</published>
+  <updated>2015-10-10T22:43:25-07:00</updated>
+  <author>
+    <name>Alan Andrade</name>
+    <uri>http://alan-andrade.github.io</uri>
+    <email>alan.andradec+website@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;So you’ve been hearing good stuff about Elixir and Phoenix but you
+haven’t had a chance to check it out ? Well, you’re reading the right blog
+post. Today we’re going to build an API that will echo the parameters of the
+request with json format. Within 10 minutes. So don’t go to lunch yet,
+check this out.&lt;/p&gt;
+
+&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
+
+&lt;h2 id=&quot;erlang&quot;&gt;Erlang&lt;/h2&gt;
+
+&lt;p&gt;In order to use Elixir, we need to install Erlang first because Elixir
+runs on top of Erlang’s virtual machine. Install Erlang 18.0 from
+&lt;a href=&quot;https://www.erlang-solutions.com/downloads/download-erlang-otp&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;elixir&quot;&gt;Elixir&lt;/h2&gt;
+
+&lt;p&gt;Brew it with &lt;code&gt;brew update &amp;amp;&amp;amp; brew install elixir&lt;/code&gt; or
+install it from &lt;a href=&quot;http://elixir-lang.org/install.html#distributions&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;phoenix&quot;&gt;Phoenix&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install ‘hex’, the dependency manager &lt;code&gt;mix local.hex&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Install Phoenix &lt;code&gt;mix archive.install
+https://github.com/phoenixframework/phoenix/releases/download/v1.0.3/phoenix_new-1.0.3.ez&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Elixir comes with a tool named &lt;code&gt;mix&lt;/code&gt; which is like ruby’s rake, it runs
+predefined tasks or “recipes”.  Hex on the other hand, ensures that every
+library that we use is compatible with each other.
+This acts like bundler in the ruby world.&lt;/p&gt;
+
+&lt;h1 id=&quot;project-creation&quot;&gt;Project creation&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;mix phoenix.new echoAPI --no-brunch --no-ecto --no-html&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create the project under the folder “echoAPI”.&lt;/li&gt;
+  &lt;li&gt;Skips the asset manager for front end stuff such as images and
+javascripts. &lt;code&gt;--no-brunch&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Skips the database and the model layer. &lt;code&gt;--no-ecto&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Skips the generation of any html &lt;code&gt;--no-html&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;controller&quot;&gt;Controller&lt;/h1&gt;
+
+&lt;p&gt;Create a new file under &lt;code&gt;web/controllers&lt;/code&gt; and name it
+&lt;code&gt;echo_controller.ex&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The controller will process the request and should return a json with
+all the parameters sent in the request.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-elixir&quot;&gt;defmodule EchoAPI.EchoController do
+  use EchoAPI.Web :controller
+
+  def index(conn, params)
+    json(conn, params)
+  end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code&gt;defmodule&lt;/code&gt; Is used to define a new module.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;EchoAPI.EchoController&lt;/code&gt; is the name of the controller prefixed by
+the namespace of the application.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;use EchoApi.Web :controller&lt;/code&gt; is where something like inheritance
+happens. This will inject code that comes from `web/web.ex’ that
+allows this module to be a Phoenix controller.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;def index(conn, params)&lt;/code&gt; is the function that will dispatch requests
+for our endpoint.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;conn&lt;/code&gt; is the current connection&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;params&lt;/code&gt; are the request parameters.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;index&lt;/code&gt; is the name of the method and has this specific name by
+convention.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://alan-andrade.github.io/phoenixupandrunning/&quot;&gt;Phoenix in 10 minutes&lt;/a&gt; was originally published by Alan Andrade at &lt;a href=&quot;http://alan-andrade.github.io&quot;&gt;Alan Andrade&lt;/a&gt; on October 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
 
 </feed>
