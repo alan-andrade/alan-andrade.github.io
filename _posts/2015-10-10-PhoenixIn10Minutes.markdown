@@ -11,10 +11,9 @@ date: 2015-10-10T22:43:25-07:00
 ---
 
 So you've been hearing good stuff about Elixir and Phoenix but you
-haven't had a chance to check it out ? Well, you're reading the right blog
-post. Today we're going to build an API that will echo the parameters of the
-request with json format. Within 10 minutes. So don't go to lunch yet,
-check this out.
+haven't had a chance to check it out ? Let's fix that by building an API
+within 10 minutes. The server will echo the parameters of the request
+with json format. Don't go to lunch yet ! :open_hands:
 
 # Resources
 
@@ -66,7 +65,7 @@ like a map that hold information of which controller will process what
 endpoint. e.g. `/api/echo` should be handled by the controller
 "EchoController".
 
-Let's begin !
+Let's begin ! :muscle:
 
 # Controller
 
@@ -100,7 +99,7 @@ end
    reponse with the second argument as the body.
 
 This controller is ready to answer requests and echo the parameters
-back. Let's connect it it the router.
+back. Let's connect it to the router.
 
 # Routes
 
@@ -120,8 +119,8 @@ defmodule EchoAPI.Router do
 end
 {% endhighlight %}
 
-- `pipeline` is a wrapper for a set of operations that will be made on
-  the request. Similar concept to Rack.
+- `pipeline` is a wrapper for operations that transform the request.
+Similar concept to Rack.
 - a `plug` is an interface for operations that will run inside of a
   pipeline. This is like the Rack Middleware.
 - `scope` is used to group endpoints and the second argument is an
