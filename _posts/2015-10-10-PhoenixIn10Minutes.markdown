@@ -81,7 +81,7 @@ favorite song.
 
 {% highlight elixir %}
 defmodule EchoAPI.EchoController do
-  use EchoAPI.Web :controller
+  use EchoAPI.Web, :controller
 
   def index(conn, params)
     json(conn, params)
