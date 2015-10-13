@@ -3,10 +3,10 @@ layout: post
 title: "Phoenix in 10 minutes"
 modified:
 categories:
-excerpt:
-tags: []
+excerpt: Build an API with Phoenix and get a feeling of the framework already.
+tags: [api, functional, phoenix, erlang, elixir]
 image:
-  feature:
+  feature: https://raw.githubusercontent.com/phoenixframework/phoenix/master/priv/static/phoenix.png
 date: 2015-10-10T22:43:25-07:00
 ---
 
