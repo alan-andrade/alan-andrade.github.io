@@ -156,15 +156,34 @@ end
 1. Run you application with `mix phoenix.server`
 2. Use curl or a browser to point to the new endpoint. `curl
    localhost:4000/api/echo\?foo=bar`
-3. Feel proud. :godmode:
+3. Feel proud of yourself. :godmode:
 
 # Conclusion
 
-If you come from the Rails world, Phoenix will look quite familiar.
+Given that Elixir was inspired by Ruby and that Phoenix is very similar to
+Rails, the learning curve for these technologies is light if you come from
+that world. Learning Erlang and the functional style might bend your
+brain in the beginning, but be patient, this will make you a better
+programmer overall. I encourage you to learn functional approaches.
 
+I think that Phoenix has a bright future because its allowing
+programmers to build web applications that are fast and scalable *by default*.
+I've seen various companies having to spawn 50 workers in order to make
+a rails application scale and hire devops like crazy. That's without
+mentioning the pain of maintaining the monolithic.
 
-Most of the framework's ideas can be traced back to Rails and friends.
-This helps to understand more about how things work and connect the
-dots.
+From the bussiness perspective, Phoenix applications can promise less
+engineering costs with better results. Have you heard of this messaging
+app called WhatsApp that got acquired by who knows which monster? Go
+read on the footnoes[^2].
+
+Before you go, I want to thank you for reading this and good luck with
+your new adventures.
+
+\o/
+
 
 [^1]: Not having a database doesn't mean our app doesn't have a model.  I made an exception and tight the two concepts together. It's perfectly normal to have "Models" that aren't dependant on a database.
+
+[^2]: [Read about Whatsapp](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
+
