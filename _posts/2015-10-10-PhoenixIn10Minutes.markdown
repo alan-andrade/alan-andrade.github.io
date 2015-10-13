@@ -110,7 +110,7 @@ router.
 
 # Routes
 
-Open `web/router.ex` and type the following while singing like Freddy
+Open `web/router.ex` and type the following while singing like Freddie
 Mercury.
 
 {% highlight elixir %}
