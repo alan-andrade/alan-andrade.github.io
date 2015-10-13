@@ -33,22 +33,22 @@ Brew it with `brew update && brew install elixir` or install it from [here](http
 2. Install Phoenix `mix archive.install
 https://github.com/phoenixframework/phoenix/releases/download/v1.0.3/phoenix_new-1.0.3.ez`
 
-Elixir comes with a tool called mix which is like ruby's rake, it runs
-predefined tasks or "recipes".  Hex on the other hand, ensures that
-every library that we use is compatible with each other. Hex plays the
-role of Bundler or NPM, but for Elixir.
+Elixir comes with a tool called mix which is like ruby's rake. It can run
+predefined tasks or 'recipes'.  Hex on the other hand, ensures that
+every library that's used within the project, is compatible with each other.
+Hex plays the role of Bundler or NPM but in the Elixir world.
 
-# Project creation
+# Create the project
 
-In order to create a skeleton of a phoenix application run
+In order to create the skeleton of a Phoenix application run
 
 `mix phoenix.new echoAPI --no-brunch --no-ecto --no-html`
 
 1. This creates the project under the folder "echoAPI".
-2. `--no-brunch` Skips the asset manager for front end stuff such as images
-and javascripts.
+2. `--no-brunch` Skips the front-end build tool and no, we aren't
+   mocking any community, brunch is a [library](http://brunch.io/).
 3. `--no-ecto` Skips the database and the model layer.
-4. `--no-html` Skips the generation of any html.
+4. `--no-html` Skips the generation of html.
 
 # The plan
 
@@ -57,25 +57,27 @@ similar to those present in rails or ember. Don't worry if you haven't
 used any of those frameworks, I'll explain the general idea and you'll
 be able to follow along.
 
-To build our useful echo endpoint, we're going to work on two key components.
-Remember that this app doesn't need any database so the "Model" is out
-of the "MVC"[^1]. We need to define a **controller** that can handle the high
-volume of incoming requests and also get it to render json.
-We've tackled the 3 letters out of MVC, but to get this to work, we need
-to define a new entry on the application's **router**. The routes are
-like a map that hold information of which controller will process what
-endpoint. e.g. `/api/echo` should be handled by the controller
-"EchoController".
+To build our useful echo endpoint, we're going to work on two key
+components.  Remember that this app doesn't need any database so the
+"Model" or the "M" is out of the "MVC"[^1]. We need to define a
+**controller** (C) that handles the high volume of incoming requests and
+also get it to render json (V).  We've tackled the 3 letters of MVC,
+but to get this to work, we need to define a new entry in the
+application's **router**. The routes are like a map that holds
+information of which controller is processing which endpoint. e.g.
+`/api/echo` should be handled by the controller "EchoController".
+
+> During this pseudo tutorial, you're invited to type what goes on the
+> file and use the numbered bullet points below the code as a guide.
+> Copy/Paste is actually invalid. Leave that for your SOP[^2] Craft.
 
 Let's begin ! :muscle:
 
 # Controller
 
 Create a new file under `web/controllers` and name it
-`echo_controller.ex`.
-
-The controller will process the request and should return a json with
-all the parameters sent in the request. The file should look like this.
+`echo_controller.ex`. Type the following code while you whistle your
+favorite song.
 
 {% highlight elixir %}
 defmodule EchoAPI.EchoController do
@@ -87,25 +89,29 @@ defmodule EchoAPI.EchoController do
 end
 {% endhighlight %}
 
-1. `defmodule` Is used to define a new module in Elixir.
+Use these bullet points for reference as you type.
+
+1. `defmodule` is used to define a new module in Elixir.
 2. `EchoAPI.EchoController` is the name of the controller prefixed by
    the namespace of the application.
-3. `use EchoApi.Web :controller` is where something like inheritance
-   happens. This will inject code that comes from `web/web.ex' which
+3. `use EchoApi.Web :controller` is where inheritance happens[^2]. This will inject code that comes from `web/web.ex' which
   gives this module the interface and features of a controller.
 4. `def index(conn, params)` is a function definition which will called
    when the request comes in.
 5. `conn` is the current connection.
 6. `params` are the request parameters.
-7. `json` Is a method defined in `Phoenix.Controller` which sends a json
-   reponse with the second argument as the body.
+7. `json` is a method defined in
+[Phoenix.Controller](http://hexdocs.pm/phoenix/Phoenix.Controller.html#json/2)
+which sends a json reponse with the second argument as the body.
 
-This controller is ready to answer requests and echo the parameters
-back. Let's connect it to the router.
+
+This controller is ready to roll (Just like [Rust](https://twitter.com/_alan_andrade/status/450003473510047744)). Let's connect it to the
+router.
 
 # Routes
 
-Open `web/router.ex`, it should look like this.
+Open `web/router.ex` and type the following while singing like Freddy
+Mercury.
 
 {% highlight elixir %}
 defmodule EchoAPI.Router do
@@ -121,18 +127,22 @@ defmodule EchoAPI.Router do
 end
 {% endhighlight %}
 
-- `pipeline` is a wrapper for operations that transform the request.
-Similar concept to Rack.
-- a `plug` is an interface for operations that will run inside of a
+Mamaaa ! this was aaaaalready there ! :notes: hehe :trollface:
+
+Just make sure to read the bullets to know what's going on.
+
+- `pipeline` collects operations that transform the request in any possible
+way.  This is a similar concept to [Rack](http://rack.github.io/).
+- A `plug` is an interface for operations that will run inside of a
   pipeline. This is like the Rack Middleware.
-- `scope` is used to group endpoints and the second argument is an
-  alias. This means that anywhare under scope, you can use your modules
+- `scope` is used to group endpoints. The second argument is an
+  alias, this means that anywhere under this scope, you can use your modules
 without typing the namespace. e.g. "EchoAPI.EchoController" becomes
 "EchoController".
 - `pipe_through` is making sure that anything under that group, goes
-  through the the set of operations of the pipeline "api".
+  through the the set of operations of the :api pipeline.
 
-Let's connect out new controller !
+Let's connect the controller for real ! Type the following
 
 {% highlight elixir %}
 # ...
@@ -153,10 +163,10 @@ end
 
 # Play
 
-1. Run you application with `mix phoenix.server`
+1. Run your application with `mix phoenix.server`
 2. Use curl or a browser to point to the new endpoint. `curl
    localhost:4000/api/echo\?foo=bar`
-3. Feel proud of yourself. :godmode:
+3. Feel proud of yourself :godmode:.
 
 # Conclusion
 
@@ -167,23 +177,25 @@ brain in the beginning, but be patient, this will make you a better
 programmer overall. I encourage you to learn functional approaches.
 
 I think that Phoenix has a bright future because its allowing
-programmers to build web applications that are fast and scalable *by default*.
-I've seen various companies having to spawn 50 workers in order to make
-a rails application scale and hire devops like crazy. That's without
-mentioning the pain of maintaining the monolithic.
+programmers to build web applications that are fast and scalable __by default__.
+I've seen various companies having to spawn many workers in order to make
+a rails application scale while using redis to do global locks. That's without
+mentioning the pain of maintaining the monolithic. Don't forget however,
+that's how we got here.
 
 From the bussiness perspective, Phoenix applications can promise less
-engineering costs with better results. Have you heard of this messaging
-app called WhatsApp that got acquired by who knows which monster? Go
-read on the footnoes[^2].
+engineering costs with better results. Read about WhatsApp
+infraestructure [here](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
+to get a better idea of the magnitude this setup can accomplish.
+
+Nothing in this world can be great by just flipping a switch, but at
+least there's a player now that offers productivity, speed and scalability.
 
 Before you go, I want to thank you for reading this and good luck with
-your new adventures.
+your new adventures !
 
 \o/
 
 
 [^1]: Not having a database doesn't mean our app doesn't have a model.  I made an exception and tight the two concepts together. It's perfectly normal to have "Models" that aren't dependant on a database.
-
-[^2]: [Read about Whatsapp](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-
+[^2]: Stack Overflow Programming.
