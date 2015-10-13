@@ -94,7 +94,7 @@ Use these bullet points for reference as you type.
 1. `defmodule` is used to define a new module in Elixir.
 2. `EchoAPI.EchoController` is the name of the controller prefixed by
    the namespace of the application.
-3. `use EchoApi.Web :controller` is where inheritance happens[^2]. This will inject code that comes from `web/web.ex' which
+3. `use EchoApi.Web :controller` is where inheritance happens[^3]. This will inject code that comes from `web/web.ex' which
   gives this module the interface and features of a controller.
 4. `def index(conn, params)` is a function definition which will called
    when the request comes in.
@@ -170,6 +170,9 @@ end
 
 # Conclusion
 
+We just built a simple API that allowed us to get a feeling on Phoenix.
+The setup is quick and easy and that's good for adoption !
+
 Given that Elixir was inspired by Ruby and that Phoenix is very similar to
 Rails, the learning curve for these technologies is light if you come from
 that world. Learning Erlang and the functional style might bend your
@@ -177,7 +180,7 @@ brain in the beginning, but be patient, this will make you a better
 programmer overall. I encourage you to learn functional approaches.
 
 I think that Phoenix has a bright future because its allowing
-programmers to build web applications that are fast and scalable __by default__.
+programmers to build applications that are fast and scalable __by default__.
 I've seen various companies having to spawn many workers in order to make
 a rails application scale while using redis to do global locks. That's without
 mentioning the pain of maintaining the monolithic. Don't forget however,
@@ -186,16 +189,12 @@ that's how we got here.
 From the bussiness perspective, Phoenix applications can promise less
 engineering costs with better results. Read about WhatsApp
 infraestructure [here](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
-to get a better idea of the magnitude this setup can accomplish.
-
-Nothing in this world can be great by just flipping a switch, but at
-least there's a player now that offers productivity, speed and scalability.
+to get a better idea of the magnitude this setup can reach.
 
 Before you go, I want to thank you for reading this and good luck with
-your new adventures !
-
-\o/
+your new adventures !  \o/
 
 
 [^1]: Not having a database doesn't mean our app doesn't have a model.  I made an exception and tight the two concepts together. It's perfectly normal to have "Models" that aren't dependant on a database.
 [^2]: Stack Overflow Programming.
+[^3]: This is not really OOP inheritance, it's more like Ruby mixins (which are similar, but different).
