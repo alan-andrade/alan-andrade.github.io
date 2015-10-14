@@ -186,7 +186,7 @@ a rails application scale while using redis to do global locks. That's without
 mentioning the pain of maintaining the monolithic. Don't forget however,
 that's how we got here.
 
-From the bussiness perspective, Phoenix applications can promise less
+From the business perspective, Phoenix applications can promise less
 engineering costs with better results. Read about WhatsApp
 infraestructure [here](http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html)
 to get a better idea of the magnitude this setup can reach.
