@@ -83,7 +83,7 @@ favorite song.
 defmodule EchoAPI.EchoController do
   use EchoAPI.Web, :controller
 
-  def index(conn, params)
+  def index(conn, params) do
     json(conn, params)
   end
 end
@@ -194,6 +194,8 @@ to get a better idea of the magnitude this setup can reach.
 Before you go, I want to thank you for reading this and good luck with
 your new adventures !  \o/
 
+> Thanks to [Richard Fox](https://twitter.com/rgfox) for helping with
+> the edition.
 
 [^1]: Not having a database doesn't mean our app doesn't have a model.  I made an exception and tight the two concepts together. It's perfectly normal to have "Models" that aren't dependant on a database.
 [^2]: Stack Overflow Programming.
