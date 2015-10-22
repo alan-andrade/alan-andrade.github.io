@@ -149,7 +149,7 @@ Let's connect the controller for real ! Type the following
 scope "/api", EchoAPI do
   pipe_through :api
 
-  get '/echo', EchoController, :index
+  get "/echo", EchoController, :index
 end
 # ...
 {% endhighlight %}
